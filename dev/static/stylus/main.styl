@@ -1,0 +1,79 @@
+@import 'vars.styl'
+@import 'libs.styl'
+@import 'mixins.styl'
+
+html
+	line-height 1
+	font-size 16px
+
+
+body
+	font-family mainFont
+
+
+h1,h2,h3,h4,h5,h6
+	margin 0
+
+
+ul,li
+	margin 0
+	padding 0
+	list-style-type none
+
+p
+	margin 0
+
+a
+	text-decoration none
+	color black
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video
+	vertical-align middle
+
+
+textarea
+	resize none
+
+
+section
+	position relative
+
+
+input,
+select,
+button
+	outline none
+
+
+*, *:before, *:after
+	box-sizing border-box
+
+
+// Общие стили
+@import 'common_styles.styl'
+
+
+// МОДУЛИ
+// Стили шапки
+@import 'modules/header.styl'
+
+// Стили футера
+@import 'modules/footer.styl'
+
+// Стили меню
+@import 'modules/menu.styl'
+
+
+// СТРАНИЦЫ
+// Стили главной страницы
+@import 'pages/index.styl'
+
+
+// ПРОЧЕЕ
+// Стили медиазапросов
+@import 'media.styl'

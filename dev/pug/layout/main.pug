@@ -1,0 +1,29 @@
+include ../mixins
+block variables
+
+doctype html
+html(lang="ru-RU")
+	head
+		meta(charset="utf-8")
+		title #{title}
+		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		meta(name="viewport" content="width=device-width,initial-scale=1")
+		meta(name="keywords" content="")
+
+		//- favicon block start
+		//- favicon block end
+
+		link(rel="stylesheet" type='text/css' href="static/css/main.css")
+
+		<!--[if lt IE 9]>
+		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
+		<![endif]-->
+		body
+			.wrapper
+				include ../modules/header
+				block content
+				include ../modules/footer
+			script(src="static/js/jquery.js")
+			script(src="static/js/libs.min.js")
+			block script
+			script(src="static/js/main.js")

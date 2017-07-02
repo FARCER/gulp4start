@@ -1,11 +1,42 @@
--pos(type, args)
-	i = 0
-	position: unquote(type)
-	{args[i]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
-	{args[i += 1]}: args[i + 1] is a 'unit' ? args[i += 1] : 0
+absolute-center()
+	position absolute
+	top 50%
+	left 50%
+	transform translate(-50%,-50%)
 
-absolute()
-	-pos('absolute', arguments)
+absolute-all(num)
+	position absolute
+	top num
+	bottom num
+	right num
+	left num
 
-fixed()
-	-pos('fixed', arguments)
+position($position, $top = null, $right = null,  $bottom = null, $left = null)
+	position: $position
+	if $left is a 'unit' or $left == 'auto'
+		left: $left
+	if $right is a 'unit' or $right == 'auto'
+		right: $right
+	if $top is a 'unit' or $top == 'auto'
+		top: $top
+	if $bottom is a 'unit' or $bottom == 'auto'
+		bottom: $bottom
+
+absolute($top = null, $right = null,  $bottom = null, $left = null)
+	position(absolute, $top, $right, $bottom, $left)
+
+fixed($top = null, $right = null,  $bottom = null, $left = null)
+	position(fixed, $top, $right, $bottom, $left)
+
+relative($top = null, $right = null,  $bottom = null, $left = null)
+	position(relative, $top, $right, $bottom, $left)
+
+rem(size)
+	return (size/16)rem
+
+size(a, b = false)
+	width a
+	if b
+		height b
+	else
+		height a

@@ -3,6 +3,5 @@ module.exports = function() {
         $.browserSync.init({
             server: './build'
         });
-        // $.browserSync.watch('./build', $.browserSync.reload);
     });
 };

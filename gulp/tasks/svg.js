@@ -24,5 +24,4 @@ module.exports = function() {
             }))
             .pipe($.gulp.dest('./build/static/img/svg/'));
     });
-
 };

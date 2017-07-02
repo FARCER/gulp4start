@@ -1,5 +1,5 @@
 module.exports = function () {
-    $.gulp.task('styles:dev', () => {
+    $.gulp.task('styles:build', () => {
         return $.gulp.src('./dev/static/stylus/main.styl')
             .pipe($.gp.stylus({
                 'include css': true
@@ -9,20 +9,20 @@ module.exports = function () {
             }))
             .pipe($.gp.csscomb())
             .pipe($.gp.csso())
-            .pipe($.gulp.dest('./build/static/css/'));
+            .pipe($.gulp.dest('./build/static/css/'))
     });
 
     $.gulp.task('styles:dev', () => {
         return $.gulp.src('./dev/static/stylus/main.styl')
             .pipe($.gp.sourcemaps.init())
+            .pipe($.gp.stylus({
+                'include css': true
+            }))
             .on('error', $.gp.notify.onError(function (error) {
                 return {
                     title: 'Stylus',
                     message: error.message
                 };
-            }))
-            .pipe($.gp.stylus({
-                'include css': true
             }))
             .pipe($.gp.sourcemaps.write())
             .pipe($.gp.autoprefixer({

@@ -14,6 +14,7 @@ module.exports = function() {
             .pipe($.gp.uglify())
             .pipe($.gulp.dest('./build/static/js/'));
     });
+
     $.gulp.task('js:copy', () => {
         return $.gulp.src(['./dev/static/js/*.js',
                            '!./dev/static/js/libs.min.js'])

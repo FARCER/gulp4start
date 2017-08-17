@@ -9,4 +9,10 @@ module.exports = function() {
             .pipe($.gp.tinypng(YOUR_API_KEY))
             .pipe($.gulp.dest('./build/static/img/'));
     });
+
+
+    $.gulp.task('svg:copy', () => {
+        return $.gulp.src('./dev/static/img/general/*.svg')
+            .pipe($.gulp.dest('./build/static/img/general/'));
+    });
 };

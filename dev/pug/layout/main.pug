@@ -6,7 +6,9 @@ html(lang="ru-RU")
 	head
 		meta(charset="utf-8")
 		title #{title}
+		<!--[if IE]>
 		meta(http-equiv='X-UA-Compatible', content="IE = edge")
+		<![endif]-->
 		meta(name="viewport" content="width=device-width,initial-scale=1")
 		meta(name="keywords" content="")
 
@@ -15,13 +17,13 @@ html(lang="ru-RU")
 		<!--[if lt IE 9]>
 		script(src="http://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.2/html5shiv.min.js")
 		<![endif]-->
-		body(class=pageClass)
-			.wrapper
-				include ../modules/header
-				.content
-					block content
-				include ../modules/footer
-			script(src="static/js/jquery.js")
-			script(src="static/js/libs.min.js")
-			script(src="static/js/main.js")
-			block script
+	body(class=pageClass)
+		.wrapper
+			include ../modules/header
+			.content
+				block content
+			include ../modules/footer
+		script(src="static/js/jquery.js")
+		script(src="static/js/libs.min.js")
+		script(src="static/js/main.js")
+		block script
